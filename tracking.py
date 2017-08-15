@@ -58,6 +58,12 @@ kpts1 = None
 #kpts1 = image.load_descriptor("/desc.orb")
 #img = sensor.snapshot()
 #draw_keypoints(img, kpts1)
+'''Traceback (most recent call last):
+  File "main.py", line 60, in <module>
+MemoryError: FB Alloc Collision!!!
+MicroPython v1.8-4391-g3696110a on 2017-06-04; OPENMV3 with STM32F765
+Type "help()" for more information.
+>>> '''
 
 clock = time.clock()
 while (True):
