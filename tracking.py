@@ -1,3 +1,4 @@
+# 640P version - Not working
 # Object tracking with keypoints example.
 # Show the camera an object and then run the script. A set of keypoints will be extracted
 # once and then tracked in the following frames. If you want a new set of keypoints re-run
@@ -40,7 +41,7 @@ sensor.reset()
 sensor.set_contrast(3)
 sensor.set_gainceiling(16)
 sensor.set_framesize(sensor.VGA)
-sensor.set_windowing((320, 240))
+sensor.set_windowing((640, 480))
 sensor.set_pixformat(sensor.GRAYSCALE)
 
 sensor.skip_frames(time = 200)
@@ -83,9 +84,9 @@ while (True):
             coords = list(match.rect())
             #print(coords)
 
-            #convert the xyz coordinates for uarm
-            delta_y = (coords[2]/2+coords[0] - 160)/20
-            delta_x = (coords[3]/2+coords[1] - 120)/20
+            #convert the xyz coordinates for uarm - These are not working
+            delta_y = (coords[2]/2+coords[0] - 320)/20
+            delta_x = (coords[3]/2+coords[1] - 240)/20
 
             #Gcode command, seperated the command because of the limit lenght
             final_coords = "G2204 X"+str(delta_x)
