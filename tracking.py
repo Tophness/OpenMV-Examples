@@ -71,7 +71,7 @@ while (True):
     img = sensor.snapshot()
     if (kpts1 == None):
         # NOTE: By default find_keypoints returns multi-scale keypoints extracted from an image pyramid.
-        kpts1 = img.find_keypoints(max_keypoints=150, threshold=20, scale_factor=1.35)
+        kpts1 = img.find_keypoints(max_keypoints=150, threshold=20, scale_factor=2.7)
         draw_keypoints(img, kpts1)
     else:
         # NOTE: When extracting keypoints to match the first descriptor, we use normalized=True to extract
@@ -91,8 +91,8 @@ while (True):
             #print(coords)
 
             #convert the xyz coordinates for uarm - These are not working
-            delta_y = (coords[2]/2+coords[0] - 320)/20
-            delta_x = (coords[3]/2+coords[1] - 240)/20
+            delta_y = (coords[2]/2+coords[0] - 320)/40
+            delta_x = (coords[3]/2+coords[1] - 240)/40
 
             #Gcode command, seperated the command because of the limit lenght
             final_coords = "G2204 X"+str(delta_x)
